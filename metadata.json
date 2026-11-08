@@ -1,0 +1,6 @@
+{
+  "name": "MathMatrix Pro - Thiết Kế Ma Trận & Đặc Tả Toán THPT",
+  "description": "Ứng dụng tạo, chỉnh sửa trực tiếp và xuất file Word/PDF Ma trận và Bảng đặc tả đề kiểm tra môn Toán chuẩn Chương trình GDPT 2018.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

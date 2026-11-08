@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-doc: 'Times New Roman', 'Noto Serif', Georgia, serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #F8FAFC;
+    color: #0F172A;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.font-doc {
+  font-family: 'Times New Roman', 'Noto Serif', Georgia, serif;
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Official Vietnamese Exam Table Styling (matching the user's attached PDF) */
+.exam-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Times New Roman', 'Noto Serif', serif;
+  font-size: 13.5px;
+  line-height: 1.35;
+  color: #000000;
+}
+
+.exam-table th,
+.exam-table td {
+  border: 1px solid #1E293B;
+  padding: 5px 6px;
+  vertical-align: middle;
+}
+
+.exam-header-green {
+  background-color: #C6E0B4;
+  font-weight: 700;
+  text-align: center;
+}
+
+.exam-summary-orange {
+  background-color: #F8CBAD;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Print / PDF Export Styles */
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 12mm;
+  }
+
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-sheet {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .exam-header-green {
+    background-color: #C6E0B4 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .exam-summary-orange {
+    background-color: #F8CBAD !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page-break-before {
+    page-break-before: always;
+  }
+}
