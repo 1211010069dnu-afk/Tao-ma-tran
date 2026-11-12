@@ -5,6 +5,10 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
+    // Tự lấy tên repo khi build bằng GitHub Actions; chạy ở máy/AI Studio thì dùng '/'
+    base: process.env.GITHUB_REPOSITORY
+      ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}/`
+      : '/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
